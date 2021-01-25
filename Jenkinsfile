@@ -14,7 +14,7 @@ pipeline {
     stages {
 	stage('Ansible Launch') {
 	    steps {
-		sh 'ansible-playbook -i inventory.ini install.yml' 
+		sh 'ansible-playbook -i inventory.ini install.yml --key-file "tp_dev_ynov.pem"' 
 	    }
 	}
     }
