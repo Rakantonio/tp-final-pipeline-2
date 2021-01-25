@@ -2,13 +2,13 @@ FROM jenkins/jenkins:latest
 USER root
 RUN apt update && \
     apt -y install ansible && \
-    apt -y install -y openssh sshpass && \
-    adduser -D -s /bin/sh ansible 
+    apt -y install openssh sshpass && \
+    adduser -D -s /bin/sh ubuntu
 
-USER ansible
-RUN mkdir /home/ansible/playbook && \
-    ssh-keygen -t rsa -f /home/ansible/.ssh/id_rsa -N ''
+USER ubuntu
+RUN mkdir /home/ubuntu/playbook && \
+    ssh-keygen -t rsa -f /home/ubuntu/.ssh/id_rsa -N ''
 
-WORKDIR /home/ansible/playbook
+WORKDIR /home/ubuntu/playbook
 
 ENTRYPOINT [ "ansible-playbook" ]
