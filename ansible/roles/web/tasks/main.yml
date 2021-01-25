@@ -1,0 +1,19 @@
+---
+# tasks file for roles/web
+- name: Install NGINX
+  apt:
+    name: nginx
+    update_cache: true
+
+
+- name: Add user ubuntu to docker group
+  user:
+    name: ubuntu
+    groups: docker
+    append: yes
+  become: yes
+
+
+- name: Git clone
+  git:
+    repo: "https://github.com/Rakantonio/tp-final-pipeline-2 /var/www/html/"
