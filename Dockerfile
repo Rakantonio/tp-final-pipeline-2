@@ -3,7 +3,7 @@ USER root
 RUN apt update && \
     apt -y install ansible && \
     apt -y install sshpass && \
-    adduser -D -s /bin/sh ubuntu
+    adduser -m -s /bin/bash ubuntu
 
 USER ubuntu
 RUN mkdir /home/ubuntu/playbook && \
