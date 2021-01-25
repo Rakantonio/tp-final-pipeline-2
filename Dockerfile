@@ -2,8 +2,7 @@ FROM jenkins/jenkins:latest
 USER root
 RUN apt update && \
     apt -y install ansible && \
-    apt -y install sshpass && \
-    adduser -m -s /bin/bash ubuntu
+    apt -y install sshpass
 
 USER ubuntu
 RUN mkdir /home/ubuntu/playbook && \
