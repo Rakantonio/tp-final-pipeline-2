@@ -14,7 +14,7 @@ pipeline {
     stages {
 	stage('Ansible Launch') {
 	    steps {
-		sh 'ansible-playbook -i inventory.ini install.yml --key-file "~/.ssh/tp_dev_ynov.pem"' 
+		sh 'ansible-playbook -i inventory.ini install.yml --key-file "/home/ubuntu/.ssh/id_rsa"' 
 	    }
 	}
     }

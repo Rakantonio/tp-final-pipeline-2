@@ -2,7 +2,7 @@ FROM jenkins/jenkins:latest
 USER root
 RUN apt update && \
     apt -y install ansible && \
-    apt -y install openssh sshpass && \
+    apt -y install sshpass && \
     adduser -D -s /bin/sh ubuntu
 
 USER ubuntu
