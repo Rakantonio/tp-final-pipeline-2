@@ -6,12 +6,11 @@
     update_cache: true
 
 
-- name: Add user ubuntu to docker group
-  user:
-    name: ubuntu
-    groups: docker
-    append: yes
-  become: yes
+- name: Install Git
+  apt: 
+    name: git
+    state: present
+    update_cache: true
 
 
 - name: Git clone

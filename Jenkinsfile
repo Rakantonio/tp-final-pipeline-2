@@ -2,12 +2,7 @@ properties([pipelineTriggers([githubPush()])])
 
 pipeline {
 
-    agent {
-	docker {
-	    image 'hashicorp/terraform'
-	    args '--entrypoint='	
-	}
-    }
+    agent { dockerfile true }
     options {
 	withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws_cred_antonio', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])
     
